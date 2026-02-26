@@ -1,39 +1,236 @@
-<!DOCTYPE HTML>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Preethi Seshadri — PhD Candidate at UC Irvine researching Responsible AI, safety, fairness, and societal impact.">
   <title>Preethi Seshadri</title>
-  
-  <meta name="author" content="Preethi Seshadri">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
-	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
-</head>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=4">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
+    :root {
+      --bg:           #FAF7F2;
+      --text:         #6B5248;
+      --text-muted:   #B09A8E;
+      --accent:       #A05540;
+      --accent-light: #F2E5DF;
+      --border:       #E0D4CA;
+    }
+
+    html {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Anonymous Pro', 'Courier New', monospace;
+      line-height: 1.7;
+    }
+
+    /* ── Page wrapper ────────────────────────── */
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5rem clamp(2rem, 6vw, 8rem) 5rem;
+    }
+
+    /* ── Header ──────────────────────────────── */
+    .site-header {
+      margin-bottom: 3.5rem;
+    }
+
+    .site-header h1 {
+      font-family: 'Anonymous Pro', 'Courier New', monospace;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+
+    .site-header .tagline {
+      margin-top: 0.55rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+
+    .header-rule {
+      margin-top: 1.4rem;
+      width: 2.25rem;
+      height: 2px;
+      background: var(--accent);
+      border: none;
+      border-radius: 2px;
+    }
+
+    /* ── Photo ───────────────────────────────── */
+    .photo-wrap {
+      float: left;
+      width: 280px;
+      margin: 0 clamp(2rem, 4vw, 3.5rem) 1.5rem 0;
+    }
+
+    .profile-photo {
+      width: 100%;
+      display: block;
+      border-radius: 10px;
+      box-shadow: 0 4px 28px rgba(44, 36, 32, 0.13);
+    }
+
+    .main-grid::after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+
+    /* ── Inline links ────────────────────────── */
+    .bio a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-color: var(--accent-light);
+      text-underline-offset: 3px;
+      transition: text-decoration-color 0.15s ease;
+    }
+
+    .bio a:hover {
+      text-decoration-color: var(--accent);
+    }
+
+    /* ── Bio ─────────────────────────────────── */
+    .bio p {
+      font-size: 0.96rem;
+      line-height: 1.82;
+      color: var(--text);
+      margin-bottom: 1.1rem;
+    }
+
+    .bio p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ── Link buttons ────────────────────────── */
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+    }
+
+    .link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.38rem 0.85rem;
+      border: 1.5px solid var(--border);
+      border-radius: 6px;
+      background: transparent;
+      text-decoration: none;
+      color: var(--text-muted);
+      font-family: 'Anonymous Pro', 'Courier New', monospace;
+      font-size: 0.84rem;
+      font-weight: 400;
+      letter-spacing: 0.03em;
+      transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+    }
+
+    .link-btn:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+      background: var(--accent-light);
+    }
+
+    .link-btn svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+
+    /* ── Responsive ──────────────────────────── */
+    @media (max-width: 580px) {
+      .page {
+        padding: 3rem 1.25rem 3rem;
+      }
+
+      .site-header h1 {
+        font-size: 2.25rem;
+      }
+
+      .photo-wrap {
+        float: none;
+        width: auto;
+        margin: 0 0 1.5rem 0;
+        display: flex;
+        justify-content: center;
+      }
+
+      .profile-photo {
+        width: min(200px, 60%);
+      }
+    }
+  </style>
+</head>
 <body>
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-    <tr style="padding:0px">
-      <td style="padding:0px">
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr style="padding:0px">
-            <td style="padding:2.5%;width:63%;vertical-align:middle">
-              <p style="text-align:center">
-                <name>Preethi Seshadri</name>
-              </p>
-              <p>Welcome! My name is Preethi and I am a CS PhD student at UC Irvine working with <a href="https://www.sameersingh.org/">Sameer Singh</a>. I am broadly interested in trustworthy, safe, and fair machine learning, and more specifically, measuring and mitigating social harms and disparities that emerge from NLP and multimodal systems. My current research focuses on understanding how data, model, and evaluation choices impact bias analysis and measures. 
-	      </p>
-	      <p>I completed my undergrad at Harvey Mudd College in 2018 and worked as a Data Scientist at UnifyID before starting grad school. Outside of research, I love traveling, exploring cafes and restaurants, going on walks, and watching the NBA. 
-	      </p>      
-	     Please reach out if you have similar interests and want to discuss ideas!
-              </p>
-              <p style="text-align:center">
-                <a href="mailto:preethis@uci.edu">Email</a> &nbsp/&nbsp
-		<a href="https://scholar.google.com/citations?user=SOYgT4kAAAAJ&hl=en">Google Scholar</a> &nbsp/&nbsp
-                <a href="https://twitter.com/Preethi__S_">Twitter</a> &nbsp/&nbsp
-                <a href="https://www.linkedin.com/in/preethi-seshadri/">LinkedIn</a>
-              </p>
-            </td>
-            <td style="padding:2.5%;width:40%;max-width:40%">
-              <a href="images/profile.jpeg"><img style="width:75%;max-width:75%" alt="profile photo" src="images/profile.jpeg" class="hoverZoomLink"></a>
-            </td>
-          </tr>
+  <div class="page">
+
+    <header class="site-header">
+      <h1>Preethi Seshadri</h1>
+      <hr class="header-rule">
+    </header>
+
+    <div class="main-grid">
+
+      <div class="bio">
+        <div class="photo-wrap">
+          <img src="profile.jpg" alt="Preethi Seshadri" class="profile-photo">
+        </div>
+        <p>Welcome! I'm Preethi and I am a researcher interested in Responsible AI, safety, fairness, and societal impact. My research focuses on evaluation, characterizing model behavior with respect to training data, and studying real-world harms in AI systems. I care deeply about designing and developing systems that are reliable, safe, and inclusive, and creating more robust and trustworthy evaluations of AI capabilities and performance.</p>
+        <p>I am currently wrapping up my PhD at UC Irvine, advised by <a href="https://sameersingh.org/" target="_blank" rel="noopener noreferrer">Sameer Singh</a>, and have been fortunate to be largely supported by an <a href="https://ics.uci.edu/2022/11/04/hpiuci-symposium-grand-opening/" target="_blank" rel="noopener noreferrer">HPI Fellowship</a>. I am also interning part-time on the Safety Team at <a href="https://cohere.com/" target="_blank" rel="noopener noreferrer">Cohere</a> with <a href="https://seraphinatarrant.github.io/" target="_blank" rel="noopener noreferrer">Seraphina Goldfarb-Tarrant</a>, where I work on evaluating allocational fairness in enterprise settings such as hiring and investigating the validity of agentic evaluations.</p>
+        <p>Before starting my PhD, I worked as a Data Scientist at UnifyID and did my undergrad at Harvey Mudd College. Outside of research, I enjoy traveling, taking long casual strolls, and watching the NBA. I'm always on a quest for good eats, and I've recently rediscovered my love for amateur crafting.</p>
+      </div>
+
+        <nav class="links" aria-label="Contact and profiles">
+          <a href="mailto:preethis@uci.edu" class="link-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            Email
+          </a>
+          <a href="https://scholar.google.com/citations?user=SOYgT4kAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="link-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 3L1 9l4 2.18V17h2v-4.82L11 14v.01c.33.09.66.13 1 .13s.67-.04 1-.13L21 9 12 3zM5 13.18v3.55L12 21l7-4.27v-3.55l-7 3.82-7-3.82z"/>
+            </svg>
+            Google Scholar
+          </a>
+          <a href="https://www.linkedin.com/in/preethi-seshadri/" target="_blank" rel="noopener noreferrer" class="link-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            LinkedIn
+          </a>
+          <a href="https://x.com/Preethi__S_" target="_blank" rel="noopener noreferrer" class="link-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+            X / Twitter
+          </a>
+        </nav>
+
+    </div>
+  </div>
+</body>
+</html>
